@@ -1,0 +1,14 @@
+[
+  {
+    "product_name": "laptop",
+    "question": "How many laptops are in stock?",
+    "sql": "SELECT COUNT(*) FROM inventory WHERE product = 'laptop';",
+    "reference": "https://example.com/laptops"
+  },
+  {
+    "product_name": "mouse",
+    "question": "Total mouse shipped this month?",
+    "sql": "SELECT COUNT(*) FROM shipments WHERE product = 'mouse' AND month = 'July';",
+    "reference": "https://example.com/mouse"
+  }
+]
