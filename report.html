@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Query Report</title>
+</head>
+<body>
+  <h2> Query Report</h2>
+  <div id="report"></div>
+
+  <script>
+    const logs = JSON.parse(localStorage.getItem("query_logs") || "[]");
+    const total = logs.length;
+    const matched = logs.filter(q => q.matched).length;
+    const unmatched = total - matched;
+    const percent = total ? ((matched / total) * 100).toFixed(2) : 0;
+
+    document.getElementById("report").innerHTML = `
+      <p><b>Total Queries:</b> ${total}</p>
+      <p><b>Matched:</b> ${matched}</p>
+      <p><b>Unmatched:</b> ${unmatched}</p>
+      <p><b>Match %:</b> ${percent}%</p>
+    `;
+  </script>
+</body>
+</html>
